@@ -18,7 +18,8 @@ public class Game {
         System.out.println("Score: "+ p.score);
         System.out.println("\nSummary:"+ p.summary);
     }
-    
+
+    // Generate Addition Questions
     public void generateAddQuestion(Player p){
         num1 = (int)(Math.random() * 20) ; //num1: 0  to 19
         num2 = (int)(Math.random() * 20) ; 
@@ -34,6 +35,7 @@ public class Game {
         p.summary +="\n"+ num1+" + " + num2 + " = "+ userAnswer + " : "+ (actualAnswer == userAnswer);        
     }
 
+    // Generate Subtraction Questions
     public void generateSubQuestion(Player p){
         num1 = (int)(Math.random()*20);
         num2 = (int)(Math.random()*20);
@@ -54,6 +56,7 @@ public class Game {
         p.summary +="\n"+ num1+" - " + num2 + " = " + userAnswer + " : " + (actualAnswer == userAnswer);
     }
 
+    // Generate Multiplication Questions
     public void generateMulQuestion(Player p){
         num1 = (int)(Math.random()*20);
         num2 = (int)(Math.random()*20);
@@ -70,6 +73,7 @@ public class Game {
         p.summary +="\n"+ num1+" * "+num2+" = "+userAnswer+ " : "+(actualAnswer == userAnswer);
     }
 
+    // Generate Division Questions
     public void generateDivQuestion(Player p){
         num1 = (int)(Math.random()*20);
         num2 = (int)(Math.random()*9) + 1;
@@ -101,22 +105,22 @@ public class Game {
                 generateDivQuestion(p);
                 break;
         }
-
     }
 
     Long endTime;
     Long startTime;
     Long totalTime;
 
+    // used in game mode #1
     public int getQuestionNum(){
         System.out.println("How many Questions? ");
         int numQ = input.nextInt();
 
         return numQ;
     }
- 
+    
+    // Mode #1 (Make a Wish): user answers random questions, amount is determined by user input
     public void makeAWish(Player p, int numQ){
-
         startTime = System.currentTimeMillis(); 
         for(int i = 0; i<numQ; i++){
             genRandomQuestion(p);
@@ -128,13 +132,14 @@ public class Game {
         displaySummary(p);
     }
 
+    // Mode #2 (No Mistakes): user completes questions until a wrong input
     public void noMistakes(Player p){
         startTime = System.currentTimeMillis();
 
         for(int i = 0; i == p.score; i++){
             genRandomQuestion(p);
         }
-
+        
         endTime = System.currentTimeMillis(); 
         totalTime = (endTime-startTime)/1000;
         
@@ -143,6 +148,7 @@ public class Game {
         System.out.println("Score: " + p.score);
     }
 
+    // Mode #3 (Take Chances): user has three lives, one wrong input subtracts one life
     public void takeChances(Player p){
         int lives = 3;
         int numQ = 0;
@@ -162,6 +168,7 @@ public class Game {
         displaySummary(p);
     }
 
+    // get time limit (in seconds), used in game mode #4
     public int getTimeLimit(){
         int maxTime;
         System.out.println("Enter time limit (seconds): ");
@@ -170,6 +177,7 @@ public class Game {
         return maxTime;
     }
 
+    // Mode #4 (Time Trial): user completes questions until time is up
     public void timeTrial(Player p, int maxTime){
 
         Long start = System.currentTimeMillis();
