@@ -3,7 +3,7 @@ package PlayerPackage;
 import java.util.*;
 
 public class Player {
-    public Integer pNum = 0;
+    public Integer pNum = 0; //player number, preserves the order of play
     public String userName;
     public Integer score;
     public String summary;
