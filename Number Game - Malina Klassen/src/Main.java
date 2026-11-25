@@ -4,6 +4,7 @@ import PlayerPackage.*;
 import java.util.*;
 
 public class Main {
+    // print display menu
     static public void displayMenu(){
         System.out.println("==== Game Menu ====");
         System.out.println("1) Make a Wish");
@@ -12,12 +13,13 @@ public class Main {
         System.out.println("4) Time Trial");
         System.out.println("Choose a mode: ");
     }
-    
+
+    // read game mode from user
     static public int getMode(Scanner input){
         int inMode = input.nextInt();
         return inMode;
     }
-    
+
     static public int getPlayerNum(Scanner input){
         input.nextLine();
         
@@ -39,19 +41,20 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         displayMenu();
-        int mode = getMode(input);
-        int playerNum = getPlayerNum(input);
+        int mode = getMode(input); // get game mode
+        int playerNum = getPlayerNum(input); // get number of players
 
         int maxTime = 0;
         int numQ = 0;
 
         Player[] p = new Player[playerNum];
 
+        // two of the game modes require some preliminary information
             switch(mode){
-                case 1: numQ = ob.getQuestionNum(); break;
+                case 1: numQ = ob.getQuestionNum(); break; // get number of questions, this will be the same across all players
                 case 2: break;
                 case 3: break;
-                case 4: maxTime = ob.getTimeLimit(); break;
+                case 4: maxTime = ob.getTimeLimit(); break; // get time limit (in seconds), this will be the same across all players
             }
 
         int i = 0;
