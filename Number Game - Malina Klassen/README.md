@@ -1,18 +1,8 @@
-## Getting Started
+## Number Game Assignment
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project was an assignment completed between October and November 2026. The goal was to create a console-based Java math game which asks the user simple math questions. 
 
-## Folder Structure
+I was provided with very simple starter code which included the addition question method and a simple main. I then was tasked with adding subtraction, division, and multiplication question types and implementing four unique game modes. I also expanded the games capabilities to include multiplayer play. 
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
